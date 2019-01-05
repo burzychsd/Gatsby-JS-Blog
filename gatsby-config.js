@@ -15,6 +15,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -23,17 +24,17 @@ module.exports = {
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
-        display: `minimal-ui`, // This path is relative to the root of the site.
+        display: `minimal-ui`,
+        icon: `./src/favicon.png` // This path is relative to the root of the site.
       },
     },
     {
     resolve: `gatsby-plugin-favicon`,
     options: {
-      logo: "./src/images/favicon.png",
- 
+      logo: './src/favicon.png',
       // WebApp Manifest Configuration
-      appName: null, // Inferred with your package.json
-      appDescription: null,
+      appName: 'gatsby-js-blog', // Inferred with your package.json
+      appDescription: 'A simple blog created using Gatsby',
       developerName: null,
       developerURL: null,
       dir: 'auto',

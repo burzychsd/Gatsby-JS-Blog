@@ -3,6 +3,7 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
 // STYLES
+import 'tachyons'
 import './layout.css'
 
 const Layout = ({ children }) => (
