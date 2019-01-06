@@ -3,7 +3,7 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import shortid from 'shortid'
-import { Link } from 'gatsby'
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 // STYLES
 import 'tachyons'
@@ -16,23 +16,20 @@ const Title = styled.h1`
 	text-align: center;
 `
 
-const LinksWrapper = styled.div`
+const LinksWrapper = styled.nav`
 	width: 90%;
 	max-width: 450px;
 	hegiht: 50px;
 	margin: 1em auto;
 `
 
-const LinkItem = styled.a`
-	font-size: 22px;
-	cursor: pointer;
-`
-
 // GLOBAL
 const links = ['Home', 'About', 'Contact'].map((text, i) => 
-	<Link className='link dark-gray' to={i === 0 ? '/' : `/${text.toLowerCase()}`}>
-		<LinkItem key={shortid.generate()}>{text}</LinkItem>
-	</Link>
+	<AniLink key={shortid.generate()} 
+	activeStyle={{ color: 'gray' }}
+	className='f4 no-underline dark-gray' 
+	fade to={i === 0 ? '/' : `/${text.toLowerCase()}`}
+	>{text}</AniLink>
 )
 
 const Layout = ({ children, title }) => (
