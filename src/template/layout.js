@@ -20,7 +20,7 @@ const LinksWrapper = styled.nav`
 	width: 90%;
 	max-width: 450px;
 	hegiht: 50px;
-	margin: 1em auto;
+	margin: 1em auto 2em auto;
 `
 
 // GLOBAL
