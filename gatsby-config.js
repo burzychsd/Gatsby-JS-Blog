@@ -34,8 +34,8 @@ module.exports = {
         name: `gatsby-js-blog`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#000000`,
+        theme_color: `#000000`,
         display: `minimal-ui`,
         icon: `./src/favicon.png` // This path is relative to the root of the site.
       },
@@ -71,9 +71,19 @@ module.exports = {
         windows: false
       }
     }
-  }
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
+  },
+  {
+    resolve: `gatsby-plugin-manifest`,
+    options: {
+      name: 'SimpleBlog',
+      short_name: 'SimpleBlog',
+      start_url: '/',
+      background_color: '#000000',
+      theme_color: '#000000',
+      display: 'minimal-ui',
+      icon: 'src/favicon.png', // This path is relative to the root of the site.
+    }
+  },
+  'gatsby-plugin-offline'
   ],
 }
