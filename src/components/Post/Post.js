@@ -2,6 +2,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
+import { DiscussionEmbed } from 'disqus-react'
 
 // COMPONENTS
 import Layout from '../../template/layout'
@@ -51,20 +52,17 @@ const Info = styled.div`
 	align-items: center;
 	margin: 5em auto 2em auto;
 `
-const CommentWrapper = styled.div`
-	width: 100%;
-	display: flex;
-	flex-flow: column nowrap;
-	justify-content: space-around;
-	align-items: center;
-	margin: 2em auto;
-`
 
 const Post = ({ data }) => {
 
 	const createMarkup = (data) => ({ __html: data })
 
-	const { title, date, author, content, image} = data.contentfulPost;
+	const { id, title, date, author, content, image} = data.contentfulPost
+	const shortName = 'gatsby-js-blog'
+	const config = {
+		identifier: id,
+        title
+	}
 
     return (
     	<Layout title={title}>
@@ -75,24 +73,17 @@ const Post = ({ data }) => {
 				<p className='ma0'>{author.authorName}</p>
 			</Info>
 			<Article dangerouslySetInnerHTML={createMarkup(content.childMarkdownRemark.html)} />
-			<CommentBlock />
+			<DiscussionEmbed shortname={shortName} config={config} />
 	    </Layout>
     );
 };
-
-const CommentBlock = () => (
-	<CommentWrapper>
-		<hr />
-	    <h2>Comments</h2>
-	    <p>No comments yet.</p>
-	</CommentWrapper>
-)
 
 export default Post;
 
 export const PageQuery = graphql`
 	query PostQuery($slug: String!) {
 		contentfulPost(slug: {eq: $slug}) {
+			id
 			title
 	        date
 	        slug
