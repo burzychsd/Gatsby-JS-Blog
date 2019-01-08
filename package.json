@@ -35,7 +35,6 @@
   ],
   "license": "MIT",
   "scripts": {
-    "heroku-postbuild": "gatsby build",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
@@ -43,7 +42,6 @@
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "devDependencies": {
-    "gh-pages": "^2.0.1",
     "prettier": "^1.15.2"
   },
   "repository": {
