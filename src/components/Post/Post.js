@@ -53,6 +53,11 @@ const Info = styled.div`
 	margin: 5em auto 2em auto;
 `
 
+const CommentsWrapper = styled.div`
+	width: 100%;
+	padding: 0 2em;
+`
+
 const Post = ({ data }) => {
 
 	const createMarkup = (data) => ({ __html: data })
@@ -73,7 +78,9 @@ const Post = ({ data }) => {
 				<p className='ma0'>{author.authorName}</p>
 			</Info>
 			<Article dangerouslySetInnerHTML={createMarkup(content.childMarkdownRemark.html)} />
-			<DiscussionEmbed shortname={shortName} config={config} />
+			<CommentsWrapper>
+				<DiscussionEmbed className='ph2' shortname={shortName} config={config} />
+			</CommentsWrapper>
 	    </Layout>
     );
 };

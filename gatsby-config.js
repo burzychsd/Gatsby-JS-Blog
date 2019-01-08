@@ -27,8 +27,8 @@ module.exports = {
         name: `gatsby-js-blog`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#000000`,
-        theme_color: `#000000`,
+        background_color: `#FFFFFF`,
+        theme_color: `#FFFFFF`,
         display: `minimal-ui`,
         icon: `./src/favicon.png` // This path is relative to the root of the site.
       },
@@ -71,8 +71,8 @@ module.exports = {
       name: 'SimpleBlog',
       short_name: 'SimpleBlog',
       start_url: '/',
-      background_color: '#000000',
-      theme_color: '#000000',
+      background_color: '#FFFFFF',
+      theme_color: '#FFFFFF',
       display: 'minimal-ui',
       icon: 'src/favicon.png', // This path is relative to the root of the site.
     }
