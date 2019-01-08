@@ -55,7 +55,7 @@ const Info = styled.div`
 
 const CommentsWrapper = styled.div`
 	width: 100%;
-	padding: 0 2em;
+	padding: 0 1em;
 `
 
 const Post = ({ data }) => {
@@ -79,7 +79,7 @@ const Post = ({ data }) => {
 			</Info>
 			<Article dangerouslySetInnerHTML={createMarkup(content.childMarkdownRemark.html)} />
 			<CommentsWrapper>
-				<DiscussionEmbed className='ph2' shortname={shortName} config={config} />
+				<DiscussionEmbed shortname={shortName} config={config} />
 			</CommentsWrapper>
 	    </Layout>
     );
