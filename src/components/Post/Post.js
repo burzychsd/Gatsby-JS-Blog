@@ -51,6 +51,14 @@ const Info = styled.div`
 	align-items: center;
 	margin: 5em auto 2em auto;
 `
+const CommentWrapper = styled.div`
+	width: 100%;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-around;
+	align-items: center;
+	margin: 2em auto;
+`
 
 const Post = ({ data }) => {
 
@@ -67,9 +75,18 @@ const Post = ({ data }) => {
 				<p className='ma0'>{author.authorName}</p>
 			</Info>
 			<Article dangerouslySetInnerHTML={createMarkup(content.childMarkdownRemark.html)} />
+			<CommentBlock />
 	    </Layout>
     );
 };
+
+const CommentBlock = () => (
+	<CommentWrapper>
+		<hr />
+	    <h2>Comments</h2>
+	    <p>No comments yet.</p>
+	</CommentWrapper>
+)
 
 export default Post;
 
