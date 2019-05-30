@@ -32,8 +32,8 @@ const PostCard = ({ title, author, postDate, text, slug, imageUrl, imageAlt }) =
 	    	<img className='mb0' style={{ width: '100%' }} src={`https:${imageUrl}`} 
 	    	alt={imageAlt} />
 	    	<h1 className='tc mv2'>{title}</h1>
-	    	<p className='tc'>{text}<span>
-	    	<AniLink className='link dark-gray' fade to={`/${slug}`}> Read More...</AniLink>
+	    	<p className='tc'>{text.slice(0, 100)}...<span>
+	    	<AniLink className='link dark-gray' fade to={`/${slug}`}> Read More</AniLink>
 	    	</span></p>
 			<Data>
 				<p className='ml2'>{author}</p>
